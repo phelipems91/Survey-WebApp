@@ -1,0 +1,28 @@
+button{
+  border-radius: 5px;
+  background: transparent;
+  border: none;
+  float: right;
+}
+
+i {
+  color: #771711;
+}
+
+button a{
+  text-decoration: none;
+  color: #F7EEEA;
+}
+
+.card {
+  display: inline-flex;
+}
+
+.surveyResults {
+  width: 20rem;
+  margin: 5px;
+}
+
+.questionsHeader {
+  background-color: lightgray;
+}

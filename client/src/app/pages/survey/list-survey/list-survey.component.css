@@ -1,0 +1,29 @@
+table {
+  background-color: whitesmoke;
+}
+
+button {
+  float: right;
+  border-radius: 5px;
+  width: 43px;
+  background-color: transparent;
+  border: none;
+}
+
+button a{
+  text-decoration: none;
+}
+
+.delete {
+  color: #DC143C;
+}
+
+.edit{
+  color: darkblue;
+}
+
+td {
+  padding: 5px;
+}
+
+

@@ -1,0 +1,17 @@
+ul {
+  float: right;
+  width: 450px;
+  margin-bottom: 100px;
+}
+
+.testClass {
+  margin-bottom: 170px;
+}
+
+.btn{
+  width: 169px;
+  height: 68px;
+  color: #F7EEEA;
+  background: #771711;
+}
+

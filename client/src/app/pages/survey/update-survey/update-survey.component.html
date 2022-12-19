@@ -1,0 +1,91 @@
+<div class="col-md-9 p-lg-3 mx-auto my-5">
+  <h4 style="text-align: center;">Update Survey</h4>
+  <br/>
+
+  <form [formGroup]="survey">
+    <button type="button" class="btn btn-primary addQuestion"  data-toggle="modal" data-target="#addQuestion" (click)="addQuestion()">
+      <i class="fa-solid fa-circle-plus"></i> &nbsp;Add question
+    </button>
+    <br/>
+
+    <div class="form-group">
+      <label for="surveyName">Survey name</label>
+      <input type="text" class="form-control" id="surveyName" placeholder="Survey name" required formControlName="surveyName">
+    </div>
+
+    <div class="form-group">
+      <label for="startDate">Start Date</label>
+      <input type="date" class="form-control" id="startDate" placeholder="Start Date" required formControlName="startDate">
+    </div>
+
+    <div class="form-group">
+      <label for="endDate">End Date</label>
+      <input type="date" class="form-control" id="endDate" placeholder="End Date" required formControlName="endDate">
+    </div>
+
+    <div class="form-group">
+      <label for="lastModification">Last Modification</label>
+      <input type="date" class="form-control" id="lastModification" required formControlName="lastModification" readonly>
+    </div>
+
+    <div class="form-group">
+      <label for="lastModification">Last Modification</label>
+      <input type="hidden" class="form-control" id="owner" required formControlName="owner">
+    </div>
+
+    <ng-container formArrayName="questions">
+      <ng-container  *ngFor="let questionForm of questions.controls; let i = index;">
+        <div [formGroup]="questionForm" >
+          <div class="card lastModification">
+            <div class="form-group">
+              <label for="description">Question: </label>
+              <input type="text" class="form-control" id="description" placeholder="Question" formControlName="description">
+            </div>
+            Question Type:
+            <div *ngIf="questions.controls[i].value.questionType === 'multipleChoice'; else trueFalse">
+              <select class="form-select" formControlName="questionType" onchange="changeQuestionType(event.currentTarget)">
+                <option value="trueFalse">True/False</option>
+                <option value="multipleChoice">Multiple Choice</option>
+              </select>
+              <div>
+                <div class="form-group">
+                  <input type="text" class="form-control" id="optionA" placeholder="Option A" formControlName="optionA">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" id="optionB" placeholder="Option B" formControlName="optionB">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" id="optionC" placeholder="Option C" formControlName="optionC">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" id="optionD" placeholder="Option D" formControlName="optionD">
+                </div>
+              </div>
+            </div>
+            <ng-template #trueFalse>
+              <select class="form-select" formControlName="questionType" onchange="changeQuestionType(event.currentTarget)">
+                <option value="trueFalse">True/False</option>
+                <option value="multipleChoice">Multiple Choice</option>
+              </select>
+            </ng-template>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" (click)="removeQuestion(i)">
+                <i class="fa-solid fa-trash-can"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </ng-container>
+
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary updateBtn" (click)="updateSurvey(survey.value)">
+        <i class="fa-solid fa-floppy-disk fa-2xl"></i> &nbsp;Update Survey
+      </button>
+    </div>
+
+  </form>
+</div>
+
+
+

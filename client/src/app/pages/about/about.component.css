@@ -1,0 +1,37 @@
+#p {
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+}
+
+#p1{
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+}
+
+#p2{
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 29px;
+}
+
+img {
+  width: 238px;
+  height: 238px;
+}
+
+i {
+  color: #771711;
+  padding-right: 20px;
+}
+
+.card {
+  display: inline-flex;
+}
+
+.groupCard {
+  width: 15rem;
+  margin: 5px;
+}

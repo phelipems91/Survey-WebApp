@@ -1,0 +1,23 @@
+button {
+  border-radius: 5px;
+  width: 43px;
+  float: right;
+  background-color: transparent;
+  border: none;
+}
+
+button a{
+  text-decoration: none;
+}
+
+.respond{
+  color: #771711;
+}
+
+table {
+  background-color: whitesmoke;
+}
+
+td {
+  padding: 5px;
+}

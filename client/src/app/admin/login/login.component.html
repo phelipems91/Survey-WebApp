@@ -1,0 +1,49 @@
+
+<div class="container text-center">
+
+  <div class="row justify-content-md-center">
+    <div class="col col-md-7">
+      <p id="p">Join the platform to get more exciting features.</p>
+    </div>
+  </div>
+
+  <div class="row justify-content-md-center">
+    <div class="col col-md-7">
+      <img src="../../../assets/home/bullhorn.png" alt="girl with bullhorn">
+    </div>
+
+    <div class="row justify-content-md-center">
+      <div class="col">
+        <p id="create-account"><a href="/register">Create Account</a></p>
+      </div>
+    </div>
+
+    <div class="row justify-content-md-center">
+      <div class="col">
+        <p id="or">- OR -</p>
+      </div>
+    </div>
+
+    <div class="row justify-content-md-center" id="login-form">
+
+      <div class="col col-md-7 d-flex align-items-center">
+        <form>
+          <div class="form-group">
+            <label for="username" class="sr-only">Username</label>
+                <input type="text" name="username" id="username" [(ngModel)]="username" class="form-control"
+                       placeholder="Username" required autofocus>
+            <label for="password" class="sr-only">Password</label>
+                <input type="password" name="password" id="password" [(ngModel)]="password" class="form-control"
+                       placeholder="Password" required>
+          </div>
+
+          <div class="text-center">
+            <button class="btn-login" (click)="login()" type="submit">Sign in</button>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>

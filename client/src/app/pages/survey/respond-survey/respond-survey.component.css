@@ -1,0 +1,18 @@
+.btn{
+  color: #F7EEEA;
+  background: #771711;
+  border: none;
+}
+
+.resultQuestions {
+  margin-top: 10px;
+  border-color: #771711;
+  border-width: 2px;
+  margin-bottom: 10px;
+  padding: 10px 20px;
+}
+
+.resultQuestionHeader {
+  border-bottom: solid;
+  border-bottom-color: #771711;
+}

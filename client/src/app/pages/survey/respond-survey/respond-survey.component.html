@@ -1,0 +1,75 @@
+<div class="col-md-9 p-lg-3 mx-auto my-5">
+  <h4 style="text-align: center;">Respond Surveys</h4>
+  <br/>
+
+  <h5>Name: {{mySurvey.surveyName}}</h5>
+
+  <form [formGroup]="surveyResponse">
+    <ng-container formArrayName="questions">
+      <ng-container *ngFor="let question of questions.controls; let i = index;">
+        <div [formGroupName]="i">
+          <div class="card resultQuestions" >
+            <h4 class="resultQuestionHeader">{{mySurvey.questions[i].description}}</h4>
+            <div class="form-group">
+              <input type="hidden" class="form-control" name="questionId" value="{{question.questionId}}">
+            </div>
+            <div *ngIf="mySurvey.questions[i].questionType === 'multipleChoice'; else trueFalse">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" value="{{mySurvey.questions[i].optionA}}"
+                       formControlName="response">
+                <label class="form-check-label" for="{{mySurvey.questions[i].optionA}}">
+                  {{mySurvey.questions[i].optionA}}
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" value="{{mySurvey.questions[i].optionB}}"
+                       formControlName="response">
+                <label class="form-check-label" for="{{mySurvey.questions[i].optionB}}">
+                  {{mySurvey.questions[i].optionB}}
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" value="{{mySurvey.questions[i].optionC}}"
+                       formControlName="response">
+                <label class="form-check-label" for="{{mySurvey.questions[i].optionC}}">
+                  {{mySurvey.questions[i].optionC}}
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" value="{{mySurvey.questions[i].optionD}}"
+                       formControlName="response">
+                <label class="form-check-label" for="{{mySurvey.questions[i].optionD}}">
+                  {{mySurvey.questions[i].optionD}}
+                </label>
+              </div>
+            </div>
+            <ng-template #trueFalse>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" value="true" formControlName="response">
+                <label class="form-check-label" for="true">
+                  True
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" value="false" formControlName="response">
+                <label class="form-check-label" for="false">
+                  False
+                </label>
+              </div>
+            </ng-template>
+          </div>
+        </div>
+      </ng-container>
+    </ng-container>
+
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary" (click)="respondSurvey(surveyResponse.value)">Submit response</button>
+    </div>
+
+  </form>
+
+</div>
+
+
+
+
